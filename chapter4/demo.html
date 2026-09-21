@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal CSS Pagination Tutorial</title>
+    
+    <!-- Internal CSS goes here inside the head tag -->
+    <style>
+        /* Center the pagination layout on the screen */
+        body {
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Target the navigation container */
+        .pagination-container {
+            margin-top: 20px;
+        }
+
+        /* Remove default bullet points and padding from the list */
+        .pagination-list {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            gap: 5px; /* Adds space between the buttons */
+        }
+
+        /* Base styles for every pagination link */
+        .pagination-list a {
+            color: #333333;
+            text-decoration: none;
+            padding: 10px 16px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect for all links EXCEPT the active one */
+        .pagination-list a:hover:not(.active) {
+            background-color: #e9ecef;
+            border-color: #cccccc;
+            color: #007bff;
+        }
+
+        /* Highlight style for the current active page */
+        .pagination-list a.active {
+            background-color: #007bff;
+            color: #ffffff;
+            border-color: #007bff;
+            cursor: default; /* Changes mouse pointer to indicate it's not clickable */
+        }
+
+        /* Optional: Disabled state style for arrow buttons if on first/last page */
+        .pagination-list a.disabled {
+            color: #6c757d;
+            pointer-events: none; /* Stops the user from clicking it */
+            background-color: #f1f3f5;
+            border-color: #dee2e6;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Interactive Pagination Demo</h2>
+
+    <!-- Semantic HTML Navigation Element -->
+    <nav class="pagination-container" aria-label="Page navigation">
+        <ul class="pagination-list">
+            
+            <li><a href="#" class="disabled">&laquo; Prev</a></li>
+            <li><a href="#" class="active">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">Next &raquo;</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>
